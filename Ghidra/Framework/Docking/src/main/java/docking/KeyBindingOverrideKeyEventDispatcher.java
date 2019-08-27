@@ -25,7 +25,7 @@ import java.awt.event.KeyListener;
 import javax.swing.*;
 import javax.swing.text.JTextComponent;
 
-import docking.util.KeyBindingUtils;
+import docking.actions.KeyBindingUtils;
 import ghidra.util.bean.GGlassPane;
 import ghidra.util.exception.AssertException;
 
@@ -408,8 +408,9 @@ class KeyBindingOverrideKeyEventDispatcher implements KeyEventDispatcher {
 
 		// ...next see if there is a key binding for when the component is the child of the focus
 		// owner
-		return KeyBindingUtils.getAction(jComponent, keyStroke,
+		action = KeyBindingUtils.getAction(jComponent, keyStroke,
 			JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+		return action;
 	}
 
 	/**
@@ -425,7 +426,9 @@ class KeyBindingOverrideKeyEventDispatcher implements KeyEventDispatcher {
 		}
 
 		KeyStroke keyStroke = KeyStroke.getKeyStrokeForEvent(event);
-		return (DockingKeyBindingAction) activeManager.getActionForKeyStroke(keyStroke);
+		DockingKeyBindingAction bindingAction =
+			(DockingKeyBindingAction) activeManager.getActionForKeyStroke(keyStroke);
+		return bindingAction;
 	}
 
 	private DockingWindowManager getActiveDockingWindowManager() {
