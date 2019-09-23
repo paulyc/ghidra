@@ -6,14 +6,14 @@ The following is a list of dependencies, in no particular order.
 This guide includes instructions for obtaining many of these at the relevant step(s).
 You may not need all of these, depending on which portions you are building or developing.
 
-* Java JDK 11 - Free long term support (LTS) versions of JDK 11 are provided by:
+* Java JDK 11 (64-bit) - Free long term support (LTS) versions of JDK 11 are provided by:
     - AdoptOpenJDK
       - https://adoptopenjdk.net/releases.html?variant=openjdk11&jvmVariant=hotspot
     - Amazon Corretto
       - https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html
 * Eclipse - It must support JDK 11. Eclipse 2018-12 or later should work. Other IDEs may work, but we have not tested them.
     - https://www.eclipse.org/downloads/
-* Gradle 5.0 or later - We use version 5.0, and tested with up to 5.5.1.
+* Gradle 5.0 or later - We use version 5.0, and tested with up to 5.6.1.
     - https://gradle.org/next-steps/?version=5.0&format=bin
 * A C/C++ compiler - We use GCC on Linux, Xcode (Clang) on macOS, and Visual Studio 2017 on Windows.
     - https://gcc.gnu.org/
